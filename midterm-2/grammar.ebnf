@@ -1,0 +1,16 @@
+```
+l1 = l2, <l1_infix> ;
+l1_infix = "+" | "-", l2 ;
+l2 = l3, <l2_infix> ;
+l2_infix = "*" | "/" , l3 ;
+l3 = l4, <l3_infix> ;
+l3_infix = "^", l4 ;
+l4 = l5, <l4_infix> ;
+l4_infix = "&&" | "||" , l5;
+l5 = l6, <l5_infix> ;
+l5_infix = "!=" | "==" | ">=" | ">" | "<=" | "<" , l6;
+l6 = value | parenthetical_expression ;
+parenthetical_expression = "(", l1, ")" ;
+loop_statement = loop_statement, "{", l1 "}";
+if_expression = if, l1, "{", l1, "}", else, "{", l1, "}";
+```
